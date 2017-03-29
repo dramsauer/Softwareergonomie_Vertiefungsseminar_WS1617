@@ -35,9 +35,18 @@ def show_histogram_plots(show_histograms=False):
         print "Histogramme oeffnen sich in neuen Fenstern."
         print "***********************************************************************"
 
-        plt.hist([daten_m_karte, daten_w_karte])
+        plt.hist([daten_m_karte, daten_w_karte], label=("Maennlich", "Weiblich"))
+        plt.legend()
+        plt.title("Verteilung - Probanden mit Karte")
+        plt.xlabel("Duration")
+        plt.ylabel("Frequency")
         plt.show()
-        plt.hist([daten_m_ohne, daten_w_ohne])
+
+        plt.hist([daten_m_ohne, daten_w_ohne], label=("Maennlich", "Weiblich"))
+        plt.legend()
+        plt.title("Verteilung - Probanden ohne Karte")
+        plt.xlabel("Duration")
+        plt.ylabel("Frequency")
         plt.show()
 
 
