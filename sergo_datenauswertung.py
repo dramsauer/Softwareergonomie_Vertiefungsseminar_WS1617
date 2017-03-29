@@ -26,45 +26,59 @@ daten_w_ohne = [229789, 241253, 151511, 176934, 80292, 351351, 94276, 226438, 28
                 135799, 146779, 91946, 315432]
 
 
+def show_histogram_plots(show_histograms=False):
+    """
+    Show histograms of the data. Function starts when show_histograms is set true.
+    """
+    if show_histograms:
+        print
+        print "Histogramme oeffnen sich in neuen Fenstern."
+        print "***********************************************************************"
 
-'''
-# Uncomment these lines to show histograms to the data.
-plt.hist([daten_m_karte, daten_w_karte])
-plt.show()
-plt.hist([daten_m_ohne, daten_w_ohne])
-plt.show()
-'''
+        plt.hist([daten_m_karte, daten_w_karte])
+        plt.show()
+        plt.hist([daten_m_ohne, daten_w_ohne])
+        plt.show()
 
-print
-print "***********************************************************************"
-print
 
-# Shapiro-Wilk
-# Perform the Shapiro-Wilk test for normality.
-# The Shapiro-Wilk test tests the null hypothesis that the data was drawn from a normal distribution.
-# -> Has to be done with both groups.
+if __name__ == "__main__":
+    print
+    print "***********************************************************************"
+    print "Auswertung der Daten"
+    print "***********************************************************************"
 
-# Mann-Whitney
-# Computes the Mann-Whitney rank test on samples x and y.
+    show_histogram_plots(True)
 
-# For further explanation see documentation and:
-# http://www.methodenberatung.uzh.ch/de/datenanalyse.html
+    # Shapiro-Wilk
+    # Perform the Shapiro-Wilk test for normality.
+    # The Shapiro-Wilk test tests the null hypothesis that the data was drawn from a normal distribution.
+    # -> Has to be done with both groups.
 
-print "Shapiro-Ergebnisse (W - Die Test-Statistik, p-Wert des Hypothesentests):"
-print "Shapiro Maennlich m. Karte: ", scipy.stats.shapiro(daten_m_karte)
-print "Shapiro Weiblich  m. Karte: ", scipy.stats.shapiro(daten_w_karte)
-print
-print scipy.stats.mannwhitneyu(daten_m_karte, daten_w_karte)
+    # Mann-Whitney
+    # Computes the Mann-Whitney rank test on samples x and y.
 
-print
-print "***********************************************************************"
-print
+    # For further explanation see documentation and:
+    # http://www.methodenberatung.uzh.ch/de/datenanalyse.html
 
-print "Shapiro-Ergebnisse (W - Die Test-Statistik, p-Wert des Hypothesentests):"
-print "Shapiro Maennlich o. Karte: ", scipy.stats.shapiro(daten_m_ohne)
-print "Shapiro Weiblich  o. Karte: ", scipy.stats.shapiro(daten_w_ohne)
-print
-print scipy.stats.mannwhitneyu(daten_m_ohne, daten_w_ohne)
+    print "Normalverteilungstests von Maennern und Frauen mit Karte:"
+    print
+    print "Shapiro-Ergebnisse (W - Die Test-Statistik, p-Wert des Hypothesentests):"
+    print "Shapiro Maennlich m. Karte: ", scipy.stats.shapiro(daten_m_karte)
+    print "Shapiro Weiblich  m. Karte: ", scipy.stats.shapiro(daten_w_karte)
+    print
+    print scipy.stats.mannwhitneyu(daten_m_karte, daten_w_karte)
 
-print
-print "***********************************************************************"
+    print
+    print "***********************************************************************"
+    print
+
+    print "Normalverteilungstests von Maennern und Frauen ohne Karte:"
+    print
+    print "Shapiro-Ergebnisse (W - Die Test-Statistik, p-Wert des Hypothesentests):"
+    print "Shapiro Maennlich o. Karte: ", scipy.stats.shapiro(daten_m_ohne)
+    print "Shapiro Weiblich  o. Karte: ", scipy.stats.shapiro(daten_w_ohne)
+    print
+    print scipy.stats.mannwhitneyu(daten_m_ohne, daten_w_ohne)
+
+    print
+    print "***********************************************************************"
