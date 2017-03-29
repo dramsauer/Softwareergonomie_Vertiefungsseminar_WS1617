@@ -2,12 +2,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy.stats
 
-# Data for the following lists comes from the log-data.
 # The data represents results of the "Software-Ergonomie Vertiefungsseminar" WS16/17, in which
 # participants tested the UR Walking Application. The lists include the summed durations the
 # participants took while pressing the "Erkannt"-button.
-# Data is copied out of David Sinz' Excel file "ExcelDatenSoftwareErgo.xlsx" which is an ordered
-# version of the original log-data ("Logdaten aufsummiert WS1617.csv").
+# Data for the following lists comes from the log-data.It is copied out of David Sinz' Excel
+# file "ExcelDatenSoftwareErgo.xlsx" which is an ordered# version of the original
+# log-data ("Logdaten aufsummiert WS1617.csv").
 # See also .csv files in this project.
 
 
