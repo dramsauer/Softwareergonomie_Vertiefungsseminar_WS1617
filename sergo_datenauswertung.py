@@ -28,20 +28,17 @@ daten_w_ohne = [229789, 241253, 151511, 176934, 80292, 351351, 94276, 226438, 28
 ergebnisse = file('Ergebnisse Normalverteilungstest und Mann-Whitney-U-Test', 'w')
 
 
-def show_histogram_plots(show_histograms=False):
+def save_histogram_plots(save_histograms=False):
     """
     Show histograms of the data. Function starts when show_histograms is set true.
     """
-    if show_histograms:
-        print "*******************************************"
-        print "Histogramme oeffnen sich in neuen Fenstern."
-        print "*******************************************"
-
+    if save_histograms:
         plt.hist([daten_m_karte, daten_w_karte], label=("Maennlich", "Weiblich"))
         plt.legend()
         plt.title("Verteilung - Probanden mit Karte")
         plt.xlabel("Duration")
         plt.ylabel("Frequency")
+        plt.savefig("Verteilung - Probanden mit Karte.pdf")
         plt.show()
 
         plt.hist([daten_m_ohne, daten_w_ohne], label=("Maennlich", "Weiblich"))
@@ -49,6 +46,7 @@ def show_histogram_plots(show_histograms=False):
         plt.title("Verteilung - Probanden ohne Karte")
         plt.xlabel("Duration")
         plt.ylabel("Frequency")
+        plt.savefig("Verteilung - Probanden ohne Karte.pdf")
         plt.show()
 
 
@@ -57,7 +55,7 @@ if __name__ == "__main__":
     print >> ergebnisse, "Auswertung der Daten"
     print >> ergebnisse, "***********************************************************************"
 
-    show_histogram_plots(True)
+    save_histogram_plots(True)
 
     # Shapiro-Wilk
     # Perform the Shapiro-Wilk test for normality.
