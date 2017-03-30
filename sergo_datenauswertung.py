@@ -56,7 +56,7 @@ if __name__ == "__main__":
     print "Auswertung der Daten"
     print "***********************************************************************"
 
-    show_histogram_plots(True)
+    show_histogram_plots()
 
     # Shapiro-Wilk
     # Perform the Shapiro-Wilk test for normality.
@@ -75,6 +75,8 @@ if __name__ == "__main__":
     print "Shapiro Maennlich m. Karte: ", scipy.stats.shapiro(daten_m_karte)
     print "Shapiro Weiblich  m. Karte: ", scipy.stats.shapiro(daten_w_karte)
     print
+    print "Ergebnis Mann-Whitney-U-Test:"
+    print
     print scipy.stats.mannwhitneyu(daten_m_karte, daten_w_karte)
 
     print
@@ -86,6 +88,8 @@ if __name__ == "__main__":
     print "Shapiro-Ergebnisse (W - Die Test-Statistik, p-Wert des Hypothesentests):"
     print "Shapiro Maennlich o. Karte: ", scipy.stats.shapiro(daten_m_ohne)
     print "Shapiro Weiblich  o. Karte: ", scipy.stats.shapiro(daten_w_ohne)
+    print
+    print "Ergebnis Mann-Whitney-U-Test:"
     print
     print scipy.stats.mannwhitneyu(daten_m_ohne, daten_w_ohne)
 
