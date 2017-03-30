@@ -1,0 +1,26 @@
+***********************************************************************
+Auswertung der Daten
+***********************************************************************
+Normalverteilungstests von Maennern und Frauen mit Karte:
+
+Shapiro-Ergebnisse (W - Die Test-Statistik, p-Wert des Hypothesentests):
+Shapiro Maennlich m. Karte:  (0.8188214898109436, 0.00011749315308406949)
+Shapiro Weiblich  m. Karte:  (0.7903482913970947, 4.394541974761523e-05)
+
+Ergebnis Mann-Whitney-U-Test:
+
+MannwhitneyuResult(statistic=398.0, pvalue=0.16869241240865429)
+
+***********************************************************************
+
+Normalverteilungstests von Maennern und Frauen ohne Karte:
+
+Shapiro-Ergebnisse (W - Die Test-Statistik, p-Wert des Hypothesentests):
+Shapiro Maennlich o. Karte:  (0.7032834887504578, 1.2998096963201533e-06)
+Shapiro Weiblich  o. Karte:  (0.8128631711006165, 0.00011350587010383606)
+
+Ergebnis Mann-Whitney-U-Test:
+
+MannwhitneyuResult(statistic=420.0, pvalue=0.26044701169289292)
+
+***********************************************************************

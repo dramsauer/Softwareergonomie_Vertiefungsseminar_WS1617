@@ -25,15 +25,17 @@ daten_w_ohne = [229789, 241253, 151511, 176934, 80292, 351351, 94276, 226438, 28
                 86949, 172679, 216532, 187514, 705171, 466370, 75442, 119466, 261893, 118660, 281618, 148705, 671131,
                 135799, 146779, 91946, 315432]
 
+ergebnisse = file('Ergebnisse Normalverteilungstest und Mann-Whitney-U-Test', 'w')
+
 
 def show_histogram_plots(show_histograms=False):
     """
     Show histograms of the data. Function starts when show_histograms is set true.
     """
     if show_histograms:
-        print
+        print "*******************************************"
         print "Histogramme oeffnen sich in neuen Fenstern."
-        print "***********************************************************************"
+        print "*******************************************"
 
         plt.hist([daten_m_karte, daten_w_karte], label=("Maennlich", "Weiblich"))
         plt.legend()
@@ -51,12 +53,11 @@ def show_histogram_plots(show_histograms=False):
 
 
 if __name__ == "__main__":
-    print
-    print "***********************************************************************"
-    print "Auswertung der Daten"
-    print "***********************************************************************"
+    print >> ergebnisse, "***********************************************************************"
+    print >> ergebnisse, "Auswertung der Daten"
+    print >> ergebnisse, "***********************************************************************"
 
-    show_histogram_plots()
+    show_histogram_plots(True)
 
     # Shapiro-Wilk
     # Perform the Shapiro-Wilk test for normality.
@@ -69,29 +70,29 @@ if __name__ == "__main__":
     # For further explanation see documentation and:
     # http://www.methodenberatung.uzh.ch/de/datenanalyse.html
 
-    print "Normalverteilungstests von Maennern und Frauen mit Karte:"
-    print
-    print "Shapiro-Ergebnisse (W - Die Test-Statistik, p-Wert des Hypothesentests):"
-    print "Shapiro Maennlich m. Karte: ", scipy.stats.shapiro(daten_m_karte)
-    print "Shapiro Weiblich  m. Karte: ", scipy.stats.shapiro(daten_w_karte)
-    print
-    print "Ergebnis Mann-Whitney-U-Test:"
-    print
-    print scipy.stats.mannwhitneyu(daten_m_karte, daten_w_karte)
+    print >> ergebnisse, "Normalverteilungstests von Maennern und Frauen mit Karte:"
+    print >> ergebnisse
+    print >> ergebnisse, "Shapiro-Ergebnisse (W - Die Test-Statistik, p-Wert des Hypothesentests):"
+    print >> ergebnisse, "Shapiro Maennlich m. Karte: ", scipy.stats.shapiro(daten_m_karte)
+    print >> ergebnisse, "Shapiro Weiblich  m. Karte: ", scipy.stats.shapiro(daten_w_karte)
+    print >> ergebnisse
+    print >> ergebnisse, "Ergebnis Mann-Whitney-U-Test:"
+    print >> ergebnisse
+    print >> ergebnisse, scipy.stats.mannwhitneyu(daten_m_karte, daten_w_karte)
 
-    print
-    print "***********************************************************************"
-    print
+    print >> ergebnisse
+    print >> ergebnisse, "***********************************************************************"
+    print >> ergebnisse
 
-    print "Normalverteilungstests von Maennern und Frauen ohne Karte:"
-    print
-    print "Shapiro-Ergebnisse (W - Die Test-Statistik, p-Wert des Hypothesentests):"
-    print "Shapiro Maennlich o. Karte: ", scipy.stats.shapiro(daten_m_ohne)
-    print "Shapiro Weiblich  o. Karte: ", scipy.stats.shapiro(daten_w_ohne)
-    print
-    print "Ergebnis Mann-Whitney-U-Test:"
-    print
-    print scipy.stats.mannwhitneyu(daten_m_ohne, daten_w_ohne)
+    print >> ergebnisse, "Normalverteilungstests von Maennern und Frauen ohne Karte:"
+    print >> ergebnisse
+    print >> ergebnisse, "Shapiro-Ergebnisse (W - Die Test-Statistik, p-Wert des Hypothesentests):"
+    print >> ergebnisse, "Shapiro Maennlich o. Karte: ", scipy.stats.shapiro(daten_m_ohne)
+    print >> ergebnisse, "Shapiro Weiblich  o. Karte: ", scipy.stats.shapiro(daten_w_ohne)
+    print >> ergebnisse
+    print >> ergebnisse, "Ergebnis Mann-Whitney-U-Test:"
+    print >> ergebnisse
+    print >> ergebnisse, scipy.stats.mannwhitneyu(daten_m_ohne, daten_w_ohne)
 
-    print
-    print "***********************************************************************"
+    print >> ergebnisse
+    print >> ergebnisse, "***********************************************************************"
