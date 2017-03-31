@@ -6,7 +6,7 @@ import scipy.stats
 # participants tested the UR Walking Application. The lists include the summed durations the
 # participants took while pressing the "Erkannt"-button.
 # Data for the following lists comes from the log-data.It is copied out of David Sinz' Excel
-# file "ExcelDatenSoftwareErgo.xlsx" which is an ordered# version of the original
+# file "ExcelDatenSoftwareErgo.xlsx" which is an ordered version of the original
 # log-data ("Logdaten aufsummiert WS1617.csv").
 # See also .csv files in this project.
 
